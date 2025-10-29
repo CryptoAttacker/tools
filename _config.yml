@@ -3,8 +3,8 @@ title: CryptoAttacker Tools
 description: Professional tools and resources for cryptocurrency security research and development
 author: CryptoAttacker
 email: contact@cryptoattacker.com
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://cryptoattacker.github.io/tools/" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
