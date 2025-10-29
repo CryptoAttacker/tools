@@ -1,0 +1,45 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <h3>{{ site.title | escape }}</h3>
+        <p>{{ site.description | escape }}</p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          {% for item in site.navigation %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <h3>Connect</h3>
+        <ul class="social-media-list">
+          {% if site.social.github %}
+          <li>
+            <a href="https://github.com/{{ site.social.github }}">
+              <svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg>
+              <span class="username">{{ site.social.github }}</span>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.social.twitter %}
+          <li>
+            <a href="https://twitter.com/{{ site.social.twitter }}">
+              <svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg>
+              <span class="username">{{ site.social.twitter }}</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
