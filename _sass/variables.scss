@@ -1,0 +1,46 @@
+// CSS Variables for theming
+:root {
+  // Light theme colors
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --heading-color: #1a1a1a;
+  --link-color: #2563eb;
+  --link-hover-color: #1d4ed8;
+  --border-color: #e5e7eb;
+  --code-bg: #f3f4f6;
+  --header-bg: #ffffff;
+  --footer-bg: #f9fafb;
+  --card-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --focus-color: #2563eb;
+}
+
+// Dark theme colors
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e5e7eb;
+  --heading-color: #f9fafb;
+  --link-color: #60a5fa;
+  --link-hover-color: #93c5fd;
+  --border-color: #374151;
+  --code-bg: #2d2d2d;
+  --header-bg: #111827;
+  --footer-bg: #111827;
+  --card-bg: #1f2937;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --focus-color: #60a5fa;
+}
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$wide: 1200px;
+
+// Spacing
+$spacing-unit: 30px;
+
+// Container width
+$content-width: 1200px;
+$on-palm: 600px;
+$on-laptop: 800px;

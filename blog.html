@@ -1,0 +1,36 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+description: Read our latest articles on cryptocurrency security, tools, and research.
+---
+
+<div class="blog">
+  <ul class="blog-list">
+    {% for post in site.posts %}
+      <li class="blog-post-item">
+        <h2 class="blog-post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+        <p class="blog-post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          {% if post.author %} • {{ post.author }}{% endif %}
+          {% if post.categories %}
+            • Posted in
+            {% for category in post.categories %}
+              <a href="{{ '/blog/categories/' | append: category | relative_url }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+          {% endif %}
+        </p>
+        <div class="blog-post-excerpt">
+          {{ post.excerpt }}
+        </div>
+        <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if site.posts.size == 0 %}
+    <p>No blog posts yet. Check back soon!</p>
+  {% endif %}
+</div>

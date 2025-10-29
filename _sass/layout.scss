@@ -1,0 +1,254 @@
+// Layout styles
+.wrapper {
+  max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix;
+
+  @media screen and (max-width: $on-laptop) {
+    max-width: calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// Header
+.site-header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+  min-height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 70px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+  color: var(--heading-color);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.site-nav {
+  float: right;
+  line-height: 70px;
+
+  .nav-trigger {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-left: 20px;
+
+    &:hover {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .sun-icon {
+      display: none;
+    }
+
+    .moon-icon {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: $on-palm) {
+    position: absolute;
+    top: 9px;
+    right: $spacing-unit / 2;
+    background-color: var(--header-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    text-align: right;
+
+    label[for="nav-trigger"] {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 36px;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+
+      > svg {
+        fill: var(--text-color);
+      }
+    }
+
+    input ~ .trigger {
+      clear: both;
+      display: none;
+    }
+
+    input:checked ~ .trigger {
+      display: block;
+      padding-bottom: 5px;
+    }
+
+    .page-link {
+      display: block;
+      padding: 5px 10px;
+      margin-left: 20px;
+      line-height: 1.5;
+    }
+  }
+}
+
+[data-theme="dark"] .theme-toggle {
+  .sun-icon {
+    display: block;
+  }
+
+  .moon-icon {
+    display: none;
+  }
+}
+
+// Main content
+.page-content {
+  padding: $spacing-unit 0;
+  flex: 1 0 auto;
+  min-height: calc(100vh - 140px);
+}
+
+// Footer
+.site-footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid var(--border-color);
+  padding: $spacing-unit 0;
+  margin-top: $spacing-unit * 2;
+}
+
+.footer-col-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$spacing-unit / 2;
+  @extend %clearfix;
+
+  @media screen and (max-width: $on-palm) {
+    flex-direction: column;
+  }
+}
+
+.footer-col {
+  float: left;
+  margin-bottom: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+  width: calc(40% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+  width: calc(30% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+  width: calc(30% - (#{$spacing-unit} / 2));
+}
+
+@media screen and (max-width: $on-laptop) {
+  .footer-col-1,
+  .footer-col-2 {
+    width: calc(50% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-3 {
+    width: calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+@media screen and (max-width: $on-palm) {
+  .footer-col {
+    float: none;
+    width: calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+.footer-links {
+  list-style: none;
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.social-media-list {
+  list-style: none;
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .username {
+    margin-left: 0.5rem;
+  }
+}
+
+.footer-bottom {
+  margin-top: $spacing-unit;
+  padding-top: $spacing-unit / 2;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}

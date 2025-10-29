@@ -1,0 +1,12 @@
+# Main navigation items
+# These can be used as an alternative to hardcoding navigation in _config.yml
+
+main:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Blog
+    url: /blog
+  - title: Contact
+    url: /contact
